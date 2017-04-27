@@ -1,0 +1,33 @@
+Errors Documentation:
+
+Circle.java:
+
+Code calculating radius in Scale added factor instead of multiplying: Error was found by doubleRadiusTest()
+
+radius = radius + factor; changed to radius = radius * factor;
+
+Code calculating center.y added xOffset instead of yOffset: Error was found by simpleMoveNeg
+
+center.y = center.y + xOffset; changed to center.y = center.y + yOffset;
+
+
+Circle1.java:
+
+If statement checking for intersection does not account for the calling circles radius
+Error found was by intersectTest.
+
+if (Math.abs(center.x - other.center.x) < radius &&
+   Math.abs(center.y - other.center.y) < radius)
+
+Changed to:
+
+if (Math.abs(center.x - other.center.x) < radius &&
+   Math.abs(center.y - other.center.y) < radius && radius <= other.radius)
+
+
+Circle2.java:
+
+Constructor does not use proper parameter placements, Error was found by simpleMove2 and simpleMoveNeg2.
+
+Changed super(y,x,radius); to super(x,y,radius);
+
